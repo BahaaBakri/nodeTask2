@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+<%- include('includes/navigation.ejs') %>
+    <main>
+        <% if (products.length > 0) { %>
+            <div class="grid">
+                <% for (let product of products) { %>
+                    <article class="card product-item">
+                        <header class="card__header">
+                            <h1 class="product__title"><%= product.name %></h1>
+                        </header>
+                        <div class="card__image">
+                            <img src="https://pickaface.net/gallery/avatar/unr_workplacemale_180407_1548_cm3i.png" alt="A Book">
+                        </div>
+                        <div class="card__content">
+                            <h2 class="product__price">21 years old</h2>
+                            <p class="product__description">A very interesting person about so many even more interesting things!</p>
+                        </div>
+                        <div class="card__actions">
+                            <button class="btn">Open Profile</button>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No any user yet</h1>
+        <% } %>
+    </main>
+    
+<%- include('includes/footer.ejs') %>
